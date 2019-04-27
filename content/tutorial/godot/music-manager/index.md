@@ -14,7 +14,7 @@ description: >
   autoload music manager that will allow to you play background music
   independent from your game scenes.
 
-colours: '#fecb15'
+colour: '#fecb15'
 
 tags:
 - Gamedev

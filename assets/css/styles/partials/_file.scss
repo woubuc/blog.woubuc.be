@@ -1,9 +1,12 @@
 @import '../../colours';
 @import '../../mixins';
 
+$break: 580px;
+
 .file {
 	@extend %container-text;
 	@extend %flex-center;
+	flex-wrap: wrap;
 
 	padding: 20px;
 	border: 2px solid $c_border;
@@ -11,7 +14,12 @@
 }
 
 .file__button {
-	margin-right: 20px;
+	flex-basis: 100%;
+
+	@include min-width($break) {
+		flex-basis: 0;
+		margin-right: 20px;
+	}
 
 	a {
 		display: block;
@@ -21,6 +29,7 @@
 		background: $c_link;
 		border-radius: 3px;
 		transition: all 60ms ease-out;
+		text-align: center;
 	}
 
 	a:hover {
@@ -29,12 +38,29 @@
 	}
 }
 
+.file__info {
+	display: flex;
+	align-items: center;
+
+	flex-grow: 1;
+	flex-basis: 100%;
+
+	@include min-width($break) {
+		flex-basis: 0;
+		display: block;
+	}
+}
+
 .file__name {
+	flex-grow: 1;
 	@extend %font-body-bold;
 }
 .file__size {
-	padding-bottom: 6px;
 	line-height: 100%;
 	font-size: 0.8rem;
 	color: $c_text_light;
+
+	@include min-width($break) {
+		padding-bottom: 6px;
+	}
 }

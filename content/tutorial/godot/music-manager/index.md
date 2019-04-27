@@ -24,8 +24,6 @@ tags:
 resources:
 - name: header
   src: header.jpg
-- name: download
-  src: music-manager.zip
 ---
 
 ## What we need

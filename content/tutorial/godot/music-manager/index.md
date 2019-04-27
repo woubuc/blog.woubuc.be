@@ -1,7 +1,6 @@
 ---
 title: A background music player in Godot
 date: 2019-04-27
-lastmod: 2019-04-27
 author: woubuc
 
 subject: godot

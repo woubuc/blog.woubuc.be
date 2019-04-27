@@ -116,7 +116,7 @@ scenes.
 **Side note:** wondering what that `track_url : String` syntax is? It's 
 a new feature in Godot 3.1 called [optional typing](https://godotengine.org/article/optional-typing-gdscript). It means we expect that 
 function parameter to be a string, and the editor should warn us if
-we're calling that function with anything that isn't a string.
+we call that function with anything that isn't a string.
 
 ### Stop()
 Let's start with the easiest function to implement. The `stop()`

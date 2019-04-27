@@ -20,9 +20,16 @@
 }
 
 .site-footer__inner {
+	@extend %container-text;
 	flex-grow: 1;
 }
 
 body.post-page .site-footer {
 	margin-top: 0;
+}
+
+@include min-width() {
+	body.post-page .site-footer__inner {
+		text-align: right;
+	}
 }

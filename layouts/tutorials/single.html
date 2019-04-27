@@ -38,7 +38,7 @@
 {{ define "main" }}
 
 	{{ if .Params.colour }}
-		{{ $css := resources.Get "css/pageStyles/post.scss" | resources.ExecuteAsTemplate (printf "page-%s.scss" .UniqueID) .Params.colour | resources.ToCSS (dict "outputStyle" "compressed") }}
+		{{ $css := resources.Get "css/pageStyles/post.scss" | resources.ExecuteAsTemplate (printf "page-%s.scss" .File.UniqueID) .Params.colour | resources.ToCSS (dict "outputStyle" "compressed") }}
 		<style type="text/css">{{ $css.Content | safeCSS }}</style>
 	{{ end }}
 

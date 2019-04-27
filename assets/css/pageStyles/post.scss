@@ -3,6 +3,9 @@
  * `{{ . }}` will be replaced with the page colour
  */
 
+// Header background (behind image)
+.post-header { background-color: {{ . }} }
+
 // Page links
 a { color: darken({{ . }}, 10%) }
 

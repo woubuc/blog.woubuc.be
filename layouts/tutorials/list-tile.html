@@ -12,7 +12,7 @@
 		<p class="list-tile__meta post-header__meta">
 			<time>{{ .Date.Format ("January 02, 2006") }}</time>
 
-			{{ with $.Site.GetPage "taxonomy" (printf "subject/%s" .Params.subject) }}
+			{{ with $.Site.GetPage "taxonomy" (printf "subjects/%s" .Params.subject) }}
 				<span>{{ .Title }}{{ with $.Params.subject_version }} {{ . }}{{ end }}</span>
 			{{ end }}
 

@@ -1,7 +1,7 @@
 {{ define "main" }}
 <h1 class="list-title">Everything {{ .Title }}</h1>
 <section class="list">
-	{{ range where .Pages "Type" "in" (slice "tutorial") }}
+	{{ range where .Pages "Type" "in" (slice "tutorials") }}
 		{{ .Render "list-tile" }}
 	{{ end }}
 </section>

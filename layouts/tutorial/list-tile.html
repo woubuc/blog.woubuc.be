@@ -6,7 +6,7 @@
 			<time>{{ .Date.Format ("January 02, 2006") }}</time>
 
 			{{ $version := .Params.subject_version | default false }}
-			{{ with $.Site.GetPage "taxonomy" (printf "subject/%s" .Params.subject) }}{{ .Params.name }}{{ with $version }} {{ . }}{{ end }}{{ end }}
+			{{ with $.Site.GetPage "taxonomy" (printf "subject/%s" .Params.subject) }}{{ .Title }}{{ with $version }} {{ . }}{{ end }}{{ end }}
 
 			<span>{{ .Params.level }}</span>
 		</p>

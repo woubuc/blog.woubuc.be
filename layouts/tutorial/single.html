@@ -1,5 +1,6 @@
 {{ define "body_class" }}post-page tutorial-page{{ end }}
 
+
 {{ define "head" }}
 	<meta name="description" content="{{ .Params.description }}">
 	<meta name="keywords" content="{{ delimit .Params.tags ", " | lower }}">
@@ -33,6 +34,7 @@
 	{{- end }}
 {{ end }}
 
+
 {{ define "main" }}
 
 	{{ if .Params.colour }}
@@ -49,8 +51,7 @@
 					<time>{{ .Date.Format ("January 02, 2006") }}</time>
 
 					{{ $version := .Params.subject_version | default false }}
-<!--					{{ with $.Site.GetPage "taxonomy" (printf "subject/%s" .Params.subject) }}<a href="{{ .RelPermalink }}">{{ .Params.name }}{{ with $version }} {{ . }}{{ end }}</a>{{ end }}-->
-					{{ with $.Site.GetPage "taxonomy" (printf "subject/%s" .Params.subject) }}{{ .Params.name }}{{ with $version }} {{ . }}{{ end }}{{ end }}
+					{{ with $.Site.GetPage "taxonomy" (printf "subject/%s" .Params.subject) }}<a href="{{ .RelPermalink }}">{{ .Title }}{{ with $version }} {{ . }}{{ end }}</a>{{ end }}
 
 					<span>{{ .Params.level }}</span>
 				</p>

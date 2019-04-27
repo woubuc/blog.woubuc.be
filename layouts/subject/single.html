@@ -1,11 +1,22 @@
-{{ define "body_class" }}list-page{{ end }}
-
 {{ define "main" }}
-<header class="subject-header"></header>
-<header class="post-header">
-	<h2 class="post-title">{{ .Title }}</h2>
+
+{{ $pages := where .Site.Pages "Params.subject" (printf "%s" .Params.id) }}
+
+<header class="list-header">
+	<div class="list-header__inner">
+		<div class="list-header__logo" style="background-image:url('{{ ((.Resources.GetMatch "logo" | default (resources.Get "images/header.jpg")).Fit "140x140").RelPermalink }}')"></div>
+
+		<div class="list-header__info">
+			<h1>{{ .Title }}</h1>
+			{{ .Content }}
+			<p><a href="{{ .Params.homepage }}" target="_blank">{{ .Params.homepage }}</a></p>
+		</div>
+	</div>
 </header>
-<section class="post-content">
-	{{ .Content }}
+<section class="list">
+	{{ range $pages }}
+		<p>{{ .Render "list-tile" }}</p>
+	{{ end }}
 </section>
+
 {{ end }}

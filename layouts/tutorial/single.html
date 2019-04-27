@@ -15,7 +15,7 @@
 	<meta property="og:site_name" content="{{ .Site.Title }}">
 	<meta property="og:url" content="{{ .Permalink }}">
 	{{ with .Resources.GetMatch "header" }}
-		{{ $image := .Fill "450x450 smart" }}
+		{{ $image := .Fill "400x400 smart" }}
 		<meta property="og:image" content="{{ $image.Permalink }}">
 		<meta property="og:image:width" content="{{ $image.Width }}">
 		<meta property="og:image:height" content="{{ $image.Height }}">

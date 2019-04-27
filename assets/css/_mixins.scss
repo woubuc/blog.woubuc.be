@@ -1,0 +1,71 @@
+/**
+ * Fonts
+ */
+
+%font-title {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+}
+
+%font-body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+}
+%font-body-bold {
+	@extend %font-body;
+	font-weight: 600;
+}
+
+%font-code {
+	font-family: 'Source Code Pro', monospace;
+	font-weight: 400;
+	white-space: pre-wrap;
+	font-size: 0.8rem;
+	line-height: 1.3em;
+}
+%font-code-bold {
+	@extend %font-code;
+	font-weight: 700;
+}
+
+/**
+ * Structural elements
+ */
+
+%flex {
+	display: flex;
+	align-items: stretch;
+}
+%flex-center {
+	@extend %flex;
+	align-items: center;
+}
+
+%container {
+	width: 98%;
+	max-width: 820px;
+	margin: auto;
+}
+%container-text {
+	@extend %container;
+	width: 86%;
+	max-width: 720px;
+}
+
+/**
+ * Background cover image
+ */
+%background-cover {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+/**
+ * Media queries
+ */
+@mixin min-width($width: 720px) {
+	@media all and (min-width: $width) {
+		@content;
+	}
+}

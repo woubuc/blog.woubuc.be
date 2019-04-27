@@ -1,0 +1,40 @@
+@import '../../colours';
+@import '../../mixins';
+
+.file {
+	@extend %container-text;
+	@extend %flex-center;
+
+	padding: 20px;
+	border: 2px solid $c_border;
+	border-radius: 6px;
+}
+
+.file__button {
+	margin-right: 20px;
+
+	a {
+		display: block;
+		padding: 6px 12px;
+
+		color: white;
+		background: $c_link;
+		border-radius: 3px;
+		transition: all 60ms ease-out;
+	}
+
+	a:hover {
+		background: darken($c_link, 5%);
+		text-decoration: none;
+	}
+}
+
+.file__name {
+	@extend %font-body-bold;
+}
+.file__size {
+	padding-bottom: 6px;
+	line-height: 100%;
+	font-size: 0.8rem;
+	color: $c_text_light;
+}

@@ -1,0 +1,16 @@
+/**
+ * List pages (homepage, subjects, tags...)
+ */
+
+@import '../../colours';
+@import '../../mixins';
+
+.list {
+	@extend %container-text;
+	padding: 30px 0;
+}
+
+.list-title {
+	padding: 30px 0;
+	@extend %container-text;
+}

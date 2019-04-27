@@ -1,0 +1,168 @@
+
+
+/*********
+ * Fonts *
+ *********/
+
+
+/***********
+ * Colours *
+ ***********/
+a {
+	color: #FC7E0F;
+	text-decoration: none;
+}
+
+a:hover { text-decoration: underline }
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	color: #3A4145;
+	text-decoration: none;
+}
+
+.header__inner h1 a { color: white }
+
+
+/**********
+ * Images *
+ **********/
+.image {
+	margin-bottom: 40px;
+}
+.image__image {
+	margin-bottom: 4px;
+	background: transparent no-repeat center;
+	background-size: cover;
+}
+.image__caption {
+	text-align: center;
+	color: #74828a;
+	font-size: 0.8rem;
+}
+
+/***************
+ * Site header *
+ ***************/
+.header {
+	background: transparent no-repeat center;
+	background-size: cover;
+	filter: saturate(200%);
+}
+.header__inner {
+	background: rgba(0, 0, 0, 0.4);
+}
+.header h1 {
+	padding: 3vh 0;
+	font-size: 1.6rem
+}
+body.tutorial .header__inner { height: 80vh }
+
+/**********
+ * Footer *
+ **********/
+ .footer {
+	padding: 40px 0;
+	text-align: center;
+	font-size: 0.8rem;
+}
+
+
+
+
+/* YouTube embed wrapper to scale to full-width */
+
+.yt-wrapper {
+	position: relative;
+	width: 100%;
+	margin: 0;
+}
+
+.yt-wrapper:before{
+	content: "";
+	display: block;
+	padding-top: 56.25%;	/* 16:9 aspect ratio */
+}
+
+.yt-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/*	==========================================================================
+	Tags
+	========================================================================== */
+
+.tag-title {
+	font-family: "Lato", sans-serif;
+	font-size: 1.802rem;
+	font-weight: bold;
+	margin-top: 0;
+}
+
+.tag-image {
+	max-width: 100%
+}
+
+.tag-description {
+	color: #9EABB3;
+}
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+
+/* The main wrapper for pagination links */
+.pagination {
+	position: relative;
+	margin: 2rem auto;
+	font-size: .79rem;
+	color: #9EABB3;
+	text-align: center;
+}
+
+.pagination a {
+	color: #9EABB3;
+}
+
+/* Push the previous/next links out to the left/right */
+.older-posts,
+.newer-posts {
+	position: absolute;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.older-posts {
+	right: 0;
+}
+
+.page-number {
+	display: inline-block;
+	padding: 2px 0;
+	min-width: 100px;
+}
+
+.newer-posts {
+	left: 0;
+}
+
+.older-posts:hover,
+.newer-posts:hover {
+	color: #FC7E0F;
+}
+
+.extra-pagination {
+	display: none;
+}
+
+.extra-pagination .pagination {
+	width: auto;
+}
+
+/* On page2+ show extra pagination controls at the top of post list */
+.paged .extra-pagination {
+	display: block;
+}

@@ -1,0 +1,11 @@
+{{ define "body_class" }}list-page{{ end }}
+
+{{ define "main" }}
+<header class="subject-header"></header>
+<header class="post-header">
+	<h2 class="post-title">{{ .Title }}</h2>
+</header>
+<section class="post-content">
+	{{ .Content }}
+</section>
+{{ end }}

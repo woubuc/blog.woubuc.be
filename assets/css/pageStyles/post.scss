@@ -1,0 +1,34 @@
+/*
+ * Template for page-specific styles
+ * `{{ . }}` will be replaced with the page colour
+ */
+
+// Page links
+a { color: darken({{ . }}, 10%) }
+
+// Dividers
+hr { background: {{ . }} }
+
+// Code blocks
+p code {
+	background: rgba({{ . }}, 0.15);
+	border: 1px solid rgba({{ . }}, 0.4);
+}
+
+// Anchor links in titles
+h2, h3, h4, h5, h6 {
+	a:hover {
+		color: {{ . }};
+		text-decoration: none;
+	}
+}
+
+// Download button
+.file__button a { background: darken({{ . }}, 10%) }
+.file__button a:hover { background: darken({{ . }}, 15%) }
+
+// Horizontal line after intro text
+.post__content--intro::after { background: {{ . }} }
+
+// Reading progress
+#reading-progress { background: {{ . }} }

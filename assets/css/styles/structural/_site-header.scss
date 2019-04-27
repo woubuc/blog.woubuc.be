@@ -1,0 +1,25 @@
+@import '../../colours';
+@import '../../mixins';
+
+// Main header element
+.site-header {
+	background: white;
+}
+
+// Inner container
+.site-header__inner {
+	height: 50px;
+	@extend %container-text;
+	@extend %flex-center;
+}
+
+// Site title
+.site-header h1 {
+	padding-top: 4px;
+	flex-grow: 1;
+	font-size: 1.2rem;
+}
+.site-header h1 a {
+	text-decoration: none;
+	color: $c_text;
+}

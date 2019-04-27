@@ -1,0 +1,11 @@
+{{ define "main" }}
+<section class="list">
+	{{ $paginator := .Paginate (where .Pages "Type" "in" (slice "tutorial")) }}
+	{{ range $paginator.Pages }}
+		{{ .Render "list-tile" }}
+	{{ end }}
+</section>
+
+<!--	{{ partial "pagination.html" . }}-->
+
+{{ end }}

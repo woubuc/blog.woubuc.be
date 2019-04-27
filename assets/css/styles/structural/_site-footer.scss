@@ -1,0 +1,23 @@
+@import '../../colours';
+@import '../../mixins';
+
+.site-footer {
+	@extend %flex-center;
+
+	height: 90px;
+	margin-top: 30px;
+	background: $c_background_alt;
+	text-align: center;
+	font-size: 0.7rem;
+	line-height: 120%;
+
+	p { padding-bottom: 0 }
+}
+
+.site-footer__inner {
+	flex-grow: 1;
+}
+
+body.post-page .site-footer {
+	margin-top: 0;
+}

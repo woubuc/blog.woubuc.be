@@ -1,0 +1,113 @@
+@import '../../colours';
+@import '../../mixins';
+
+.post p {
+	word-break: break-word;
+	hyphens: auto;
+}
+
+/**
+ * Header with image and title overlay
+ */
+.post-header {
+	@extend %background-cover;
+	@extend %flex;
+
+	color: white;
+	text-align: center;
+}
+.post-header__inner {
+	flex-grow: 1;
+	padding: 15vh 0;
+
+	background: linear-gradient(to bottom,
+		rgba(black, 0.25) 0%,
+		rgba(black, 0.15) 3%,
+		rgba(black, 0.15) 97%,
+		rgba(black, 0.25) 100%);
+
+	h1, section { @extend %container-text }
+}
+.post-header__meta {
+	display: block;
+	color: $c_text_ghost;
+	padding: 5px 0 40px 0;
+
+	a {
+		color: $c_text_ghost;
+		text-decoration: underline;
+		&:hover { text-decoration: none }
+	}
+
+	> * {
+		padding: 0 15px;
+	}
+}
+
+/**
+ * Post content
+ */
+.post__content {
+	figure, h2, .highlight, .highlight__title { @extend %container }
+	p, ul, ol, h3, h4, h5, h6 { @extend %container-text }
+
+	p, li { text-align: justify }
+	p, ul, ol, figure { padding-bottom: 30px }
+	.highlight { margin-bottom: 30px }
+	ul, ol { padding-left: 20px }
+	h3, h4, h5, h6 { padding: 1em 0 .4em 0 }
+	p + h3, p + h4, p + h5, p + h6 { padding-top: 0.4em }
+
+	h2 {
+		padding: 60px 0 30px 0;
+		display: flex;
+
+		a {
+			display: inline-block;
+			width: 50px;
+			padding-right: 10px;
+			text-align: right;
+			color: #e0e2e4;
+			transition: all 80ms ease-out;
+		}
+	}
+
+}
+.post__content--intro {
+	padding-top: 30px;
+	font-size: 1.1rem;
+
+	@include min-width() {
+		padding-top: 90px;
+		padding-bottom: 20px;
+	}
+}
+
+/**
+ * Tag list
+ */
+.post__tags {
+	@extend %container-text;
+	padding: 30px 0;
+
+	section {
+		padding: 20px 0;
+		border-top: 1px solid $c_border;
+		border-bottom: 1px solid $c_border;
+
+		> * { margin-right: 6px }
+	}
+}
+
+/**
+ * Full page posts (no summary)
+ */
+body.post-page .post-header__inner h1 {
+	padding: 0 20px;
+	font-size: 2rem;
+
+	@include min-width() {
+		font-size: 2.8rem;
+	}
+}
+

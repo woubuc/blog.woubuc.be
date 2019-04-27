@@ -1,0 +1,15 @@
+<!-- img -->
+<figure class="image" {{ with .Get "class" }}class="{{.}}"{{ end }}>
+	{{ if .Get "cover" }}
+		<div class="image__image" style="background-image:url('{{ .Get "src" }}'); height: {{ .Get "height" | default 400 }}px;" /></div>
+	{{ else }}
+		<img class="image__image" src="{{ .Get "src" }}">
+	{{ end }}
+
+	{{ with .Get "caption"}}
+		<figcaption class="image__caption">
+			<p>{{ . }}</p>
+		</figcaption>
+	{{ end }}
+</figure>
+<!-- img -->

@@ -1,12 +1,20 @@
+{{ $image := (.Resources.GetMatch "header" | default (resources.Get "images/header.jpg")).Fill "400x200 smart" }}
+
 <article class="list-tile post post--list-tile">
-	<div class="list-tile__image" style="background-image:url('{{ ((.Resources.GetMatch "header" | default (resources.Get "images/header.jpg")).Fill "400x200 smart").RelPermalink }}')"></div>
+
+	<a href="{{ .RelPermalink }}"
+	   class="list-tile__image"
+	   style="background-image:url('{{ $image.RelPermalink }}')"></a>
+
 	<header class="list-tile__info">
 		<h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+
 		<p class="list-tile__meta post-header__meta">
 			<time>{{ .Date.Format ("January 02, 2006") }}</time>
 
-			{{ $version := .Params.subject_version | default false }}
-			{{ with $.Site.GetPage "taxonomy" (printf "subject/%s" .Params.subject) }}{{ .Title }}{{ with $version }} {{ . }}{{ end }}{{ end }}
+			{{ with $.Site.GetPage "taxonomy" (printf "subject/%s" .Params.subject) }}
+				<span>{{ .Title }}{{ with $.Params.subject_version }} {{ . }}{{ end }}</span>
+			{{ end }}
 
 			<span>{{ .Params.level }}</span>
 		</p>

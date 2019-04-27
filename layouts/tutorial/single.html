@@ -50,8 +50,9 @@
 				<p class="post-header__meta">
 					<time>{{ .Date.Format ("January 02, 2006") }}</time>
 
-					{{ $version := .Params.subject_version | default false }}
-					{{ with $.Site.GetPage "taxonomy" (printf "subject/%s" .Params.subject) }}<a href="{{ .RelPermalink }}">{{ .Title }}{{ with $version }} {{ . }}{{ end }}</a>{{ end }}
+					{{ with $.Site.GetPage "taxonomy" (printf "subject/%s" .Params.subject) }}
+						<a href="{{ .RelPermalink }}">{{ .Title }}{{ with $.Params.subject_version }} {{ . }}{{ end }}</a>
+					{{ end }}
 
 					<span>{{ .Params.level }}</span>
 				</p>

@@ -1,7 +1,7 @@
 {{ define "main" }}
+
 <section class="list">
-	{{ $paginator := .Paginate (where .Pages "Type" "in" (slice "tutorial")) }}
-	{{ range $paginator.Pages }}
+	{{ range where .Site.RegularPages "Type" "tutorial" }}
 		{{ .Render "list-tile" }}
 	{{ end }}
 </section>

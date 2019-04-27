@@ -31,6 +31,8 @@ resources:
 You can use another version of Godot, but this tutorial is written with
 Godot 3.1.
 
+Download Godot at [godotengine.org](https://godotengine.org)
+
 ### Music
 Since we're making a music player, you'll need two music tracks. Godot
 supports .wav and .ogg formats, but they recommend using

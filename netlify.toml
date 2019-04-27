@@ -3,6 +3,6 @@ public = "public"
 command = "hugo --gc --minify --enableGitInfo"
 
 [context.production.environment]
-HUGO_VERSION = "0.55"
+HUGO_VERSION = "0.55.4"
 HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"

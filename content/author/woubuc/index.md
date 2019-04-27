@@ -4,5 +4,5 @@ twitter: woubuc
 
 resources:
 - name: avatar
-  src: woubuc.jpg
+  src: avatar.png
 ---

@@ -228,8 +228,7 @@ something like this:
 {{% code src="script-scene1-2.gd" title="Scene1.gd" lang="gdscript" %}}
 {{% code src="script-scene2-2.gd" title="Scene2.gd" lang="gdscript" %}}
 
-Don't forget to set the correct paths to your tracks where the `play()`
-function is called.
+Don't forget to set the correct paths to your tracks.
 
 ## Done
 Now we can run the game and enjoy the music. Notice how it doesn't stop

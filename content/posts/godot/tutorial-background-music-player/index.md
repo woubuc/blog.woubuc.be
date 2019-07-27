@@ -1,6 +1,6 @@
 ---
-id: background-music-player-in-godot
-title: A background music player in Godot
+id: background-music-player-godot
+title: "Making a background music player in Godot"
 author: woubuc
 description: >
   There are multiple ways to play and manage music tracks for your game

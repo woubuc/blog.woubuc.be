@@ -2,10 +2,11 @@
 publish = "dist"
 command = "yarn build"
 
+# Redirect indexed links to renamed pages
 [[redirects]]
 from = "/tutorials/godot/music-manager/"
 to = "/post/background-music-player-in-godot/"
 
 [[redirects]]
 from = "/post/a-background-music-player-in-godot/"
-to = "/post/background-music-player-in-godot/"
+to = "/post/background-music-player-godot/"

@@ -120,7 +120,7 @@ export default {
 
 	computed: {
 		created() { return new Date(this.$page.post.date) },
-		postUrl() { return this.$page.metaData.siteUrl + this.$page.post.path },
+		postUrl() { return this.$page.metaData.siteUrl + this.$page.post.path + '/' },
 
 		cover() { return `url(${ this.$page.post.cover.src })` },
 		colour() { return Color(this.$page.post.colour) },

@@ -8,5 +8,6 @@ to = "/index.html"
 status = 200
 
 [[redirects]]
-from = "/tutorials/godot/music-manager/"
+from = "/tutorials/godot/music-manager"
 to = "/post/a-background-music-player-in-godot"
+force = true

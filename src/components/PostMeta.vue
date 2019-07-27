@@ -29,7 +29,7 @@ export default {
 	props: {
 		post: { type: Object, required: true },
 		postPage: { type: Boolean, default: false },
-		hideSubject: { type: Number, default: -1 },
+		hideSubject: { type: String, default: '' },
 	},
 
 	computed: {

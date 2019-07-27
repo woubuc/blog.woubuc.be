@@ -22,7 +22,7 @@
 
 <page-query>
 {
-	posts: allPost(filter: { published: { eq: true }}) {
+	posts: allPost {
 		edges {
 			node {
 				title

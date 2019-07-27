@@ -195,10 +195,6 @@ hr {
 		display: flex;
 	}
 
-	p {
-		text-align: justify;
-	}
-
 	ul, ol {
 		margin-left: 20px;
 		padding-bottom: 30px;

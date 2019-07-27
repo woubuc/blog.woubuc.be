@@ -70,7 +70,7 @@ from anywhere in our game.
 ### Scene 1
 Create a new scene and call it `Scene1`. Then add **1 label and 3 buttons** as in the screenshot below.
 
-![Screenshot](./screen-scene1.png)
+![Screenshot of scene 1, containing a label saying 'This is scene 1', a button labeled 'Go to scene 2', another button labeled 'Play track 1', and a third button labeled 'Stop music'.](./screen-scene1.png)
 
 Add a script to the root node of the scene, and connect the `pressed()`
 events of the three buttons to.
@@ -117,7 +117,7 @@ Now it's time to create our music controller scene.
 Create a new scene and call it `MusicController`. Add **1
 AudioStreamPlayer** to play our music.
 
-![Screenshot](./screen-musiccontroller.png)
+![Screenshot of the music controller scene, containing an AudioStreamPlayer node](./screen-musiccontroller.png)
 
 Add a script to the root node of the scene and add the following code
 to it:
@@ -248,7 +248,7 @@ clicking the little button next to the field.
 The **Node name** should automatically get filled based on the name of 
 the scene. You can change this if you want, but we'll leave it for now.
 
-![Screenshot](./screen-autoload-1.png)
+![Screenshot of the autoload manager, with the path to the music controller scene selected](./screen-autoload-1.png)
 
 Click the **Add** button to add the autoload scene to the project. It 
 will appear in the list below.
@@ -262,7 +262,7 @@ test something.
 Make sure **enabled** is checked for our new MusicController autoload 
 script.
 
-![Screenshot](./screen-autoload-2.png)
+![Screenshot of the autoload manager, with the path to the music controller scene added and enabled](./screen-autoload-2.png)
 
 And that's it! Our autoload scene has been added and is now active in 
 the project! This means we can access the `play()` and `stop()`

@@ -3,11 +3,12 @@ publish = "dist"
 command = "yarn build"
 
 [[redirects]]
+from = "https://blog.woubuc.be/tutorials/godot/music-manager/"
+to = "https://blog.woubuc.be/post/a-background-music-player-in-godot/"
+status = 301
+force = true
+
+[[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200
-
-[[redirects]]
-from = "/tutorials/godot/music-manager"
-to = "/post/a-background-music-player-in-godot"
-force = true

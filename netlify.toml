@@ -4,4 +4,8 @@ command = "yarn build"
 
 [[redirects]]
 from = "/tutorials/godot/music-manager/"
-to = "/post/a-background-music-player-in-godot/"
+to = "/post/background-music-player-in-godot/"
+
+[[redirects]]
+from = "/post/a-background-music-player-in-godot/"
+to = "/post/background-music-player-in-godot/"

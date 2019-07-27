@@ -45,7 +45,7 @@ module.exports = {
 			options: {
 				typeName: 'Post',
 				path: 'content/posts/**/*.md',
-				route: '/post/:title',
+				route: '/post/:id',
 				refs: {
 					tags: {
 						typeName: 'Tag',

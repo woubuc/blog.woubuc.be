@@ -46,7 +46,7 @@ export default {
 
 .narrow > .site-header { max-width: 740px }
 .wide > .site-header {
-	max-width: 1000px;
+	max-width: 1060px;
 
 	@include min-width(820px) { padding: 0 50px }
 }

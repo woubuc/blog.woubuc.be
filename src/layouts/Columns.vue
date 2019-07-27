@@ -33,7 +33,7 @@
 	flex-shrink: 0;
 
 	@include min-width(820px) {
-		width: 220px;
+		width: 280px;
 	}
 }
 
@@ -41,7 +41,7 @@
 	flex-grow: 1;
 
 	@include min-width(820px) {
-		max-width: 680px;
+		max-width: 640px;
 	}
 }
 
@@ -53,7 +53,6 @@
 
 	@include min-width(820px) {
 		margin-top: 16px;
-		margin-right: 16px;
 
 		> ul { display: block }
 	}

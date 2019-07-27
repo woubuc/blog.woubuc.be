@@ -45,7 +45,7 @@ query Subject ($id: String!) {
 						timeToRead
 						description
 						content
-						subjects { id title path }
+						subjects { id title colour logo(width:16, height:16) path }
 					}
 				}
 			}

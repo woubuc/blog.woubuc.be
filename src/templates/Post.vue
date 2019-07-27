@@ -199,7 +199,7 @@ hr {
 		text-align: justify;
 	}
 
-	ul {
+	ul, ol {
 		margin-left: 20px;
 		padding-bottom: 30px;
 	}
@@ -250,7 +250,7 @@ hr {
 	}
 
 	.post-content /deep/ {
-		p, h3, h4, h5, ul {
+		p, h3, h4, h5, ul, ol {
 			padding-left: 50px;
 			padding-right: 50px;
 		}

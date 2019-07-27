@@ -1,6 +1,8 @@
-# Hugo
-/public/
-/resources/_gen/
+*.log
 
-# Webstorm
-/.idea
+.idea/
+.cache/
+.temp/
+
+node_modules/
+dist/

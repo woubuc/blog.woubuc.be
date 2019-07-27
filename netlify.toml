@@ -1,8 +1,12 @@
 [build]
-public = "public"
-command = "hugo --gc --minify --enableGitInfo"
+publish = "dist"
+command = "yarn build"
 
-[context.production.environment]
-HUGO_VERSION = "0.55.4"
-HUGO_ENV = "production"
-HUGO_ENABLEGITINFO = "true"
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+[[redirects]]
+from = "/tutorials/godot/music-manager/"
+to = "/post/a-background-music-player-in-godot"

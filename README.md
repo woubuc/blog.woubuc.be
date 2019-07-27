@@ -5,5 +5,5 @@ If you spot spelling errors, styling issues, or anything else out of the
 ordinary, pull requests are welcome.
 
 ## Tools
-The project uses [Hugo](https://gohugo.io) and is hosted through
+The project uses [Gridsome](https://gridsome.org) and is hosted through
 [Netlify](https://www.netlify.com).

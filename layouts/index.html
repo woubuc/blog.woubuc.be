@@ -1,9 +1,0 @@
-{{ define "main" }}
-
-<section class="list">
-	{{ range where .Site.RegularPages "Type" "tutorials" }}
-		{{ .Render "list-tile" }}
-	{{ end }}
-</section>
-
-{{ end }}

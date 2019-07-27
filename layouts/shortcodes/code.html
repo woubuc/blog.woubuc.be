@@ -1,8 +1,0 @@
-<!-- code -->
-{{ with .Get "title" }}<div class="highlight__title">{{ . }}</div>{{ end }}
-
-{{ $file := (path.Join .Page.File.Dir (.Get "src")) | readFile }}
-{{ $lang := .Get "lang" }}
-
-{{ highlight $file $lang "" }}
-<!-- code -->

@@ -127,7 +127,7 @@ export default {
 
 		ogImage() {
 			if (!this.$page.post.ogImage) return '';
-			return this.$page.post.ogImage.src;
+			return this.$page.metaData.siteUrl + this.$page.post.ogImage.src;
 		},
 
 		content() {

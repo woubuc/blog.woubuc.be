@@ -25,6 +25,7 @@ colour: '#e1858a'
 commentLinks:
 - https://www.reddit.com/r/vuejs/comments/ciublx/how_and_why_i_chose_gridsome_static_site/
 - https://dev.to/woubuc/choosing-a-static-site-generator-126k#comments
+- https://medium.com/p/c56ae081cd4e/responses/show
 - https://twitter.com/woubuc/status/1155461900064514053
 ---
 

@@ -32,7 +32,7 @@
 
 			<section class="post-content" ref="content" v-html="content" />
 
-			<post-tags :tags="$page.post.tags"/>
+			<post-tags :post="$page.post"/>
 
 			<post-author :author="$page.post.author" />
 		</article>

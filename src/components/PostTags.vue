@@ -2,7 +2,8 @@
 	<footer class="post-tags">
 		<section>
 			<strong>Tagged</strong>
-			<g-link class="post-tag" v-for="tag in tags" :key="tag.id" :to="tag.path">{{ tag.title.toLowerCase() }}</g-link>
+			<g-link class="post-tag" v-for="subject in post.subjects" :key="subject.id" :to="subject.path">{{ subject.title.toLowerCase() }}</g-link>
+			<g-link class="post-tag" v-for="tag in post.tags" :key="tag.id" :to="tag.path">{{ tag.title.toLowerCase() }}</g-link>
 		</section>
 	</footer>
 </template>
@@ -10,7 +11,7 @@
 <script>
 export default {
 	props: {
-		tags: { type: Array, required: true },
+		post: { type: Object, required: true },
 	},
 }
 </script>

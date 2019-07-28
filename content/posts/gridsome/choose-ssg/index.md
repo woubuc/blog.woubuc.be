@@ -1,5 +1,5 @@
 ---
-id: choosing-satic-site-generator
+id: choosing-static-site-generator
 title: Choosing a static site generator
 author: woubuc
 description: >

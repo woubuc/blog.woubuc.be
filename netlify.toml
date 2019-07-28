@@ -10,3 +10,7 @@ to = "/post/background-music-player-in-godot/"
 [[redirects]]
 from = "/post/a-background-music-player-in-godot/"
 to = "/post/background-music-player-godot/"
+
+[[redirects]]
+from = "/post/choosing-satic-site-generator/"
+to = "/post/choosing-static-site-generator/"

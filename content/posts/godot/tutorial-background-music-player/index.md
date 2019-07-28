@@ -26,6 +26,11 @@ files:
 - name: music-manager.zip
   size: 2.28MB
   path: ./music-manager.zip
+  
+commentLinks:
+- https://www.reddit.com/r/godot/comments/citw6g/making_a_background_music_player_in_godot/
+- https://dev.to/woubuc/a-background-music-player-in-godot-h6e#comments
+- https://medium.com/p/2f8acdac5d25/responses/show
 ---
 
 ## What we need

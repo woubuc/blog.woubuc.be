@@ -2,7 +2,7 @@
 	<Layout>
 		<article>
 			<v-style>
-				.post-content a, .post-tags a, .post-author a, .site-footer a { color: {{ colour.darken(0.2) }} }
+				.post-content a, .post-tags a, .post-author a, .post-comments a, .site-footer a { color: {{ colour.darken(0.2) }} }
 				.post-content a.anchor-link:hover { color: {{ colour }} }
 				.post-content p code, .post-content li code {
 					background: {{ colour.alpha(0.12) }};
@@ -32,6 +32,8 @@
 
 			<section class="post-content" ref="content" v-html="content" />
 
+			<post-comment-links :post="$page.post" />
+
 			<post-tags :post="$page.post"/>
 
 			<post-author :author="$page.post.author" />
@@ -56,6 +58,7 @@ query ($path: String!) {
 
 		tags { id title path }
 		subjects { id title path colour logo(width: 16, height: 16) }
+		commentLinks
 
 		files { name size path }
 
@@ -78,9 +81,10 @@ import ScrollProgress from '../components/ScrollProgress';
 import initHighlightJs from '../highlight';
 import FileDownload from '../components/FileDownload';
 import PostAuthor from '../components/PostAuthor';
+import PostCommentLinks from '../components/PostCommentLinks';
 
 export default {
-	components: { PostAuthor, FileDownload, ScrollProgress, PostMeta, PostTags },
+	components: { PostCommentLinks, PostAuthor, FileDownload, ScrollProgress, PostMeta, PostTags },
 
 	metaInfo() {
 		const tags = [].concat(this.$page.post.subjects, this.$page.post.tags).map(t => t.title);

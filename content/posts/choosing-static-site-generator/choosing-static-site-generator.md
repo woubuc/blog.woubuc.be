@@ -19,7 +19,7 @@ tags:
 - Frontend
 - SSG
 
-image: ./choose-ssg.jpg
+image: ./header.jpg
 colour: '#e1858a'
 
 commentLinks:

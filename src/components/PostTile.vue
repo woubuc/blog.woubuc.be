@@ -17,7 +17,7 @@ export default {
 
 	props: {
 		post: { type: Object, required: true },
-		hideSubject: { type: Number, default: -1 },
+		hideSubject: { type: String, default: '' },
 	},
 }
 </script>

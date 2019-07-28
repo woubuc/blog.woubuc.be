@@ -61,7 +61,7 @@ Create a new scene and call it `Scene1`. Then add **1 label and 3 buttons** as i
 
 ![Screenshot of scene 1, containing a label saying 'This is scene 1', a button labeled 'Go to scene 2', another button labeled 'Play track 1', and a third button labeled 'Stop music'.](./screen-scene1.png)
 
-Add a script to the root node of the scene, and connect the `pressed()` events of the three buttons to.
+Add a script to the root node of the scene, and connect the `pressed()` events of the three buttons to it.
 
 ###### Scene1.gd
 ```gdscript

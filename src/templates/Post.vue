@@ -27,7 +27,7 @@
 
 			<section class="post-content post-files" v-if="$page.post.files.length > 0">
 				<p><strong>Download associated files</strong></p>
-				<file-download class="file-download" v-for="file in $page.post.files" :key="file.path" :file="file" />
+				<file-download class="file-download" v-for="file in $page.post.files" :key="file.path.src" :file="file" />
 			</section>
 
 			<section class="post-content" ref="content" v-html="content" />

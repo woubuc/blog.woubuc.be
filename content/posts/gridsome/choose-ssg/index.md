@@ -32,7 +32,7 @@ After a few Google searches, I found a website called [StaticGen.com](https://ww
 
 
 ## Jekyll
-The 'classic' static site generator, [Jekyll](https://jekyllrb.com/) has been around for ages, it's stable and boring. Great choice for a writer or someone who just needs their site online. A little less *fun* for someone who wants to use their site as a personal playground for experimenting (like me).
+The 'classic' static site generator, [Jekyll](https://jekyllrb.com/) has been around for ages, it's stable and boring. A great choice for a writer or someone who just needs their site online. A little less *fun* for someone who wants to use their site as a personal playground for experimenting (like me).
  
 #### I liked
 - Stable, battle-tested and production-ready
@@ -59,21 +59,21 @@ Next on the list is [Hugo](https://gohugo.io/). This one is built in Go, another
 #### I didn't like
 - I found the template syntax to be just awful if you want to do anything beyond printing variables and simple if-statements
 
-That one dislike was unfortunately a dealbreaker for me. If it wasn't for the clumsy and messy templates, I probably would've stuck with Hugo. But the way I had to interpolate variables, the function calls without parentheses, and the fact that the template compiler doesn't suport line breaks in code blocks, made for the worst code mess I've ever seen.
+Unfortunately, that one dislike was a dealbreaker for me. If it wasn't for the clumsy and messy templates, I probably would've stuck with Hugo. But the way I had to interpolate variables, the function calls without parentheses, and the fact that the template compiler doesn't support line breaks in code blocks, made for the worst code mess I've ever seen.
 
 A short example of what this means:
 ```html
 {{ $css := resources.Get "css/pageStyles/post.scss" | resources.ExecuteAsTemplate (printf "page-%s.scss" .File.UniqueID) .Params.colour | resources.ToCSS (dict "outputStyle" "compressed") }}
 ```
 
-This line gets an SCSS file, fills the template tags inside it with a variable, and then renders it to CSS. On their own these functions aren't that bad, but put together in this way the whole thing becomes difficult to visually grok what's going on, and impossible to debug or change without a lot of trial-and-error.
+This line gets an SCSS file, fills the template tags inside it with a variable, and then renders it to CSS. On their own, these functions aren't that bad. But put together in this way the whole thing becomes difficult to visually grok what's going on and impossible to debug or change without a lot of trial-and-error.
 
 Now I'm sure there must be good reasons why the template syntax is like this, but there were so many little annoyances and inconveniences that I simply gave up after building about two-thirds of the blog in Hugo.
 
 
 
 ## Gatsby
-The next step on my search was [Gatsby](https://www.gatsbyjs.org/). As a front-end developer first and foremost, the concept of using [React](https://reactjs.org/) &mdash; a front-end framework &mdash; to build a front-end website, sounded logical. Next to the pre-rendered static HTML, Gatsby outputs a React-powered bundle of Javascript to turn the rest of the site into a progressive web app (__PWA__ for short). This makes for a fast initial load time because of the static HTML, and then an even faster navigation due to the powers of the PWA.
+The next step on my search was [Gatsby](https://www.gatsbyjs.org/). As a front-end developer first and foremost, the concept of using [React](https://reactjs.org/) &mdash; a front-end framework &mdash; to build a front-end website, sounded logical. Next to the pre-rendered static HTML, Gatsby outputs a React-powered bundle of Javascript to turn the rest of the site into a progressive web app (__PWA__ for short). This makes for a fast initial load time because of the static HTML, and then even faster navigation due to the powers of the PWA.
 
 #### I liked
 - Static sites for front-end developers
@@ -107,8 +107,8 @@ I also haven't figured out sorting and filtering yet, so I've got some learning 
 
 
 ## Conclusion
-All static site generators have pros and cons, and I can't recommend enough that you just try them all our for a few hours to see how they work. Most of the time you'll figure out very quickly if the tool's workflow matches yours or not, and then you can move on to the next one.
+All static site generators have pros and cons, and I can't recommend enough that you just try them all out for a few hours to see how they work. Most of the time you'll figure out very quickly if the tool's workflow matches yours or not, and then you can move on to the next one.
 
 The best resource I found to search for SSGs is [StaticGen.com](https://www.staticgen.com/). If you're trying to find a good static site generator, this is the best place to start your search. Not every tool is for everyone, but there's bound to be one that works *just right*.
 
-In any case, so far I'm very happy with my choice of Gridsome. I plan to do a write-up later about my experience actually building a site with it, but I decided to keep this post just about the selection process.
+In any case, so far I'm very happy with my choice of Gridsome. I plan to do a write-up later about my experience building a site with it, but I decided to keep this post just about the selection process.

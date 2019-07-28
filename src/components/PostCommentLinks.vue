@@ -2,7 +2,9 @@
 	<footer class="post-comments" v-if="hasLinks">
 		<section>
 			<strong>Join the conversation</strong><br>
-			<a class="post-comment-link" v-for="link in post.commentLinks" :key="link" :href="link" target="_blank" rel="noreferrer noopener nofollow">{{ hostname(link) }}</a>
+			<div>
+				<a class="post-comment-link" v-for="link in post.commentLinks" :key="link" :href="link" target="_blank" rel="noreferrer noopener nofollow">{{ hostname(link) }}</a>
+			</div>
 		</section>
 	</footer>
 </template>
@@ -33,6 +35,14 @@ export default {
 	padding: 30px;
 	padding-bottom: 0px;
 
-	section > a { margin-right: 20px }
+	section > strong { padding-right: 20px }
+
+	section > div {
+		display: flex;
+		flex-wrap: wrap;
+
+		> a { margin-right: 20px }
+		> a:last-child { margin-right: 0 }
+	}
 }
 </style>

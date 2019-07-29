@@ -194,11 +194,6 @@ hr {
 }
 
 .post-content /deep/ {
-	h2 {
-		padding: 60px 0 30px 0;
-		display: flex;
-	}
-
 	ul, ol {
 		margin-left: 20px;
 		padding-bottom: 30px;
@@ -209,8 +204,13 @@ hr {
 	h4 { font-size: 1.15rem }
 	h5 { font-size: 1rem }
 
-	h3, h4, h5 { padding: 1em 0 .4em 0 }
+	h2, h3, h4, h5 { padding: 1em 0 .4em 0 }
 	p + h3, p + h4, p + h5 { padding-top: 0.4em }
+
+	h2 {
+		padding-top: 60px;
+		display: flex;
+	}
 
 	img {
 		width: calc(100% + 60px);
@@ -219,6 +219,7 @@ hr {
 	}
 
 	a.anchor-link {
+		flex-shrink: 0;
 		width: 30px;
 		margin-left: -30px;
 		padding-right: 4px;
@@ -235,10 +236,14 @@ hr {
 	}
 }
 
+hr + .post-content /deep/ > p:first-child {
+	padding-top: 20px;
+}
+
 @media all and (min-width: 820px) {
 	.post-header-inner > h1 {
 		font-size: 2.8rem;
-		max-width: 640px;
+		max-width: 700px;
 		margin: auto;
 	}
 
@@ -267,6 +272,10 @@ hr {
 			margin-left: 0;
 			padding-right: 6px;
 		}
+	}
+
+	hr + .post-content /deep/ > p:first-child {
+		padding-top: 30px;
 	}
 }
 </style>

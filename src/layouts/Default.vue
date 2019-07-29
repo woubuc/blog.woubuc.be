@@ -37,17 +37,19 @@ export default {
 	align-items: center;
 
 	height: 60px;
-	max-width: 720px;
+	max-width: 820px;
 	margin: auto;
-	padding: 0 20px;
+	padding: 0 10px;
 
-	@include min-width() { padding: 0 30px }
+	@include min-width(820px) { padding: 0 30px }
 }
 
 .narrow > .site-header { max-width: 740px }
 .wide > .site-header {
 	max-width: 1060px;
+	padding: 0 20px;
 
+	@include min-width() { padding: 0 30px }
 	@include min-width(820px) { padding: 0 50px }
 }
 

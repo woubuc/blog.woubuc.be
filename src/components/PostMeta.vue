@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { format } from 'date-fns';
+import format from 'date-fns/format';
 import SubjectLink from './SubjectLink';
 
 export default {

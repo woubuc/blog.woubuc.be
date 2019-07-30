@@ -3,7 +3,7 @@ id: self-documenting-code-is-a-myth
 title: Self-documenting is a myth, and how to make your code self-documenting
 author: woubuc
 description: >
-  Self-documenting code is often presented as an utopia where you don't need to write comments. But code can never be entirely self-documenting. Here are some tips on how to clean up your code and write less comments without losing sight of the big picture.
+  Self-documenting code is often presented as a programmer's utopia where you don't need to write comments. But code can never be entirely self-documenting. Here are some tips on how to clean up your code and write less comments without losing sight of the big picture.
 
 published: false
 date: 2019-07-29
@@ -166,6 +166,6 @@ I want to extract three rules from what we've seen in this post, based on the th
 - Use well-structured code to show **how** you're going about achieving the goal.
 - Use comments to explain **why** you're doing things a certain way, especially if that way may be non-obvious.
 
-That last one is the hardest for a lot of developers because the **why** is usually obvious while you're writing the code. But take a moment to think of all the Stevens who need to look at your code months or even years after you wrote it. They'll be grateful.
+That last one is the hardest for a lot of developers because the **why** is usually obvious while you're writing the code. But take a moment to think of the developers who will need to look at your code months or even years after you wrote it. They'll be grateful.
 
 Make Steve happy. Document your self-documenting code.

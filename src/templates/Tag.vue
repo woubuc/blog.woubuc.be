@@ -5,7 +5,7 @@
 		</div>
 
 		<div class="posts">
-			<post-tile v-for="edge in $page.tag.belongsTo.edges" :key="edge.node.id" :post="edge.node"/>
+			<post-tile v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>
 		</div>
 	</Layout>
 </template>
@@ -14,20 +14,21 @@
 query Tag ($id: String!) {
 	tag (id: $id) {
 		title
+	}
 
-		belongsTo {
-			edges {
-				node {
-					...on Post {
-						title
-						path
-						date
-						timeToRead
-						description
-						content
-						subjects { id title path logo(width: 16, height: 16) colour }
-					}
-				}
+	posts: allPost(filter: {
+		tags: { contains: [$id] },
+		published: { eq: true },
+	}) {
+		edges {
+			node {
+				title
+				path
+				date
+				timeToRead
+				description
+				content
+				subjects { id title colour logo(width: 16, height: 16) path }
 			}
 		}
 	}

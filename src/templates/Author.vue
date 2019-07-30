@@ -5,7 +5,7 @@
 		</div>
 
 		<div class="posts">
-			<post-tile :hide-subject="$page.author.id" v-for="edge in $page.author.belongsTo.edges" :key="edge.node.id" :post="edge.node"/>
+			<post-tile :hide-subject="$page.author.id" v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>
 		</div>
 	</Layout>
 </template>
@@ -15,20 +15,21 @@ query Author ($id: String!) {
 	author (id: $id) {
 		id
 		name
+	}
 
-		belongsTo {
-			edges {
-				node {
-					...on Post {
-						title
-						path
-						date
-						timeToRead
-						description
-						content
-						subjects { id title colour logo(width: 16, height: 16) path }
-					}
-				}
+	posts: allPost(filter: {
+		author: { eq: $id },
+		published: { eq: true },
+	}) {
+		edges {
+			node {
+				title
+				path
+				date
+				timeToRead
+				description
+				content
+				subjects { id title colour logo(width: 16, height: 16) path }
 			}
 		}
 	}

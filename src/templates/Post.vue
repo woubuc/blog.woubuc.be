@@ -10,6 +10,10 @@
 				}
 				.post-files .file-download .button a { background: {{ colour.darken(0.15) }}; }
 				.post-files .file-download .button a:hover { background: {{ colour.darken(0.25) }}; }
+				.post-content blockquote {
+					background: {{ colour.alpha(0.05) }};
+					border-color: {{ colour.alpha(0.2) }};
+				}
 			</v-style>
 
 			<header class="post-header" :style="{ backgroundColor: colour, backgroundImage: cover }">
@@ -50,6 +54,7 @@ query ($path: String!) {
 		title
 		author { name image(width: 100, height: 100) twitter }
 		date (format: "YYYY-MM-DD")
+		published
 		timeToRead
 
 		description
@@ -233,6 +238,24 @@ hr {
 		padding: 2px 4px;
 		border-radius: 3px;
 		font-size: 0.8rem;
+		font-style: normal;
+	}
+
+	blockquote {
+		padding: 20px 30px;
+		margin-bottom: 30px;
+		border-width: 2px;
+		border-style:solid;
+		border-left: none;
+		border-right: none;
+
+		font-size: 0.9rem;
+		font-style: italic;
+
+		p code, li code  { font-size: 0.74rem }
+
+		p { padding-bottom: 20px }
+		p:last-child { padding-bottom: 0 }
 	}
 }
 
@@ -271,6 +294,16 @@ hr + .post-content /deep/ > p:first-child {
 			width: 50px;
 			margin-left: 0;
 			padding-right: 6px;
+		}
+
+		blockquote {
+			margin-left: 50px;
+			margin-right: 50px;
+
+			p {
+				padding-left: 0;
+				padding-right: 0;
+			}
 		}
 	}
 

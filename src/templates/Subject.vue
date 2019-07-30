@@ -19,7 +19,7 @@
 
 		<template slot="right">
 			<div class="posts">
-				<post-tile :hide-subject="$page.subject.id" v-for="edge in $page.subject.belongsTo.edges" :key="edge.node.id" :post="edge.node"/>
+				<post-tile :hide-subject="$page.subject.id" v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>
 			</div>
 		</template>
 	</ColumnsLayout>
@@ -34,20 +34,21 @@ query Subject ($id: String!) {
 		logo (width: 120, height: 120, fit: contain)
 		colour
 		content
+	}
 
-		belongsTo {
-			edges {
-				node {
-					...on Post {
-						title
-						path
-						date
-						timeToRead
-						description
-						content
-						subjects { id title colour logo(width:16, height:16) path }
-					}
-				}
+	posts: allPost(filter: {
+		subjects: { contains: [$id] },
+		published: { eq: true },
+	}) {
+		edges {
+			node {
+				title
+				path
+				date
+				timeToRead
+				description
+				content
+				subjects { id title colour logo(width: 16, height: 16) path }
 			}
 		}
 	}

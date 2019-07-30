@@ -1,6 +1,6 @@
 <template>
 	<layout narrow>
-		<g-image src="~/assets/images/404.jpg" width="680" height="320" />
+		<g-image src="~/assets/images/404.jpg" width="680" height="320" :immediate="true" />
 		<section>
 			<h1>404</h1>
 			<p>That page doesn't seem to exist. <g-link to="/">Back to home</g-link></p>

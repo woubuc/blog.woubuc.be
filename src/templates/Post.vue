@@ -23,7 +23,7 @@
 				</div>
 			</header>
 
-			<div v-if="!$page.post.published" class="unpublished-warning">This post is not yet published. It is subject to change and may be removed entirely.<br>Do not share this post until it is published.</div>
+			<div v-if="!$page.post.published" class="unpublished-warning">This post is unpublished. It is subject to change and may be removed entirely.<br>Do not share this post until it is published.</div>
 
 			<section class="post-content post-intro">
 				<p>{{ $page.post.description }}</p>

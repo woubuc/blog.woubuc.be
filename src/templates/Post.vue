@@ -23,6 +23,8 @@
 				</div>
 			</header>
 
+			<div v-if="!$page.post.published" class="unpublished-warning">This post is not yet published. It is subject to change and may be removed entirely.<br>Do not share this post until it is published.</div>
+
 			<section class="post-content post-intro">
 				<p>{{ $page.post.description }}</p>
 			</section>
@@ -173,6 +175,34 @@ export default {
 		font-size: 2.2rem;
 		color: white;
 		margin: auto;
+	}
+}
+
+.unpublished-warning {
+	padding: 20px 30px;
+
+	color: white;
+	background: #f70;
+
+	text-align: center;
+	font-size: 0.9rem;
+	font-weight: 600;
+	line-height: 1.1rem;
+
+	&::before {
+		display: block;
+		content: '!';
+
+		width: 25px;
+		height: 25px;
+		line-height: 25px;
+		margin: auto;
+		margin-bottom: 10px;
+
+		color: white;
+		background: #ff3700;
+		border-radius: 50%;
+		font-size: 1.1rem;
 	}
 }
 

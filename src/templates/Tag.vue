@@ -24,6 +24,7 @@ query Tag ($id: String!) {
 			node {
 				title
 				path
+				published
 				date
 				timeToRead
 				description

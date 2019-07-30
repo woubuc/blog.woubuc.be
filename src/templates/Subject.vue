@@ -44,6 +44,7 @@ query Subject ($id: String!) {
 			node {
 				title
 				path
+				published
 				date
 				timeToRead
 				description

@@ -27,6 +27,7 @@
 			node {
 				title
 				path
+				published
 				subjects { id title path colour logo(width: 16, height: 16) }
 				date
 				timeToRead

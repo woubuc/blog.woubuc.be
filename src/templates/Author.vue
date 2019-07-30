@@ -25,6 +25,7 @@ query Author ($id: String!) {
 			node {
 				title
 				path
+				published
 				date
 				timeToRead
 				description

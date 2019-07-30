@@ -94,11 +94,16 @@ export default {
 	metaInfo() {
 		const tags = [].concat(this.$page.post.subjects, this.$page.post.tags).map(t => t.title);
 
+		const robots = [];
+		if (!this.$page.post.published) robots.push({ name: 'robots', content: 'noindex' });
+
 		return {
 			title: this.$page.post.title,
 			meta: [
 				{ name: 'description', content: this.$page.post.description },
 				{ name: 'keywords', content: tags.join(', ') },
+				{ name: 'robots', content: this.$page.post.published ? 'index' : 'noindex' },
+				...robots,
 
 				{ property: 'og:title', content: this.$page.post.title },
 				{ property: 'og:description', content: this.$page.post.description },

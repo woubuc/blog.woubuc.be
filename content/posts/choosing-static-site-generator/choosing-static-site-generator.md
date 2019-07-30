@@ -26,7 +26,6 @@ commentLinks:
 - https://www.reddit.com/r/vuejs/comments/ciublx/how_and_why_i_chose_gridsome_static_site/
 - https://dev.to/woubuc/choosing-a-static-site-generator-126k#comments
 - https://medium.com/p/c56ae081cd4e/responses/show
-- https://twitter.com/woubuc/status/1155461900064514053
 ---
 
 I'm new to static site generators. I've heard about them, and I know they've gained in popularity in the past couple of years, but until now when I made a static site it was just a folder of HTML files. But now I decided to do it *properly*, since I was going to build a whole new blog. So I started searching.

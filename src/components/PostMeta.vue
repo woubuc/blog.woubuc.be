@@ -7,7 +7,8 @@
 						  class="post-meta" />
 		</template>
 
-		<time class="post-meta">{{ date }}</time>
+		<time v-if="post.published" class="post-meta">{{ date }}</time>
+		<span v-else class="post-meta">Unpublished</span>
 
 		<template v-if="postPage">
 			<g-link v-for="subject in subjects"

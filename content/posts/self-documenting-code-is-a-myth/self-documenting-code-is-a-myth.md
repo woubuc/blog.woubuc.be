@@ -78,7 +78,7 @@ function get() {
 	// Map to get just the participant's names
 	return arr.map(i => i.name);
 }
-````
+```
 
 It has gotten a little clearer already, but adding comments is exactly what we wanted to avoid with our self-documenting code.
 

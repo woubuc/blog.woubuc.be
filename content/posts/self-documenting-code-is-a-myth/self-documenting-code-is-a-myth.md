@@ -3,10 +3,10 @@ id: self-documenting-code-is-a-myth
 title: Self-documenting is a myth, and how to make your code self-documenting
 author: woubuc
 description: >
-  Self-documenting code is often presented as a programmer's utopia where you don't need to write comments. But code can never be entirely self-documenting. Here are some tips on how to clean up your code and write less comments without losing sight of the big picture.
+  Self-documenting code is often presented as a programmer's utopia, where you don't need to write comments at all! But code can never be entirely self-documenting. Here are some tips on how to clean up your code and write fewer comments without losing sight of the big picture.
 
-published: false
-date: 2019-07-29
+published: true
+date: 2019-08-03
 
 tags:
 - Best Practices
@@ -14,13 +14,13 @@ tags:
 - Documentation
 
 image: ./header.jpg
-colour: '#713d61'
+colour: '#a14d76'
 ---
 
 ## What is self-documenting code
 In order to write code, you have to understand the surrounding code. And in order to understand it, you need to read it. Often repeatedly and frequently. So it's in everyone's best interest that this code is clear, concise and properly documented.
 
-**Self-documenting code** is a goal that a lot of developers (including myself) set for themselves one time or another. For most, it means you should write clean, well-structured code that makes it immediately obvious what's going on, so you don't need to write comments explaining it.
+**Self-documenting code** is a goal that a lot of developers (including myself) set for themselves at least once. For most people it means you should write clean, well-structured code that makes it immediately obvious what's going on, so you don't need to write comments explaining it.
 
 ### Well actually...
 You can write the best, cleanest, most well-structured code anyone has ever seen, but here's the truth: **You'll still need to write comments and document your code**. You won't have to write *as many* comments, but you can't stop writing comments altogether.
@@ -46,7 +46,7 @@ function get() {
 }
 ```
 
-Only you don't clean it up because deadlines are looming and you have ten more things to finish before tomorrow's standup. And so that piece of code sits in your codebase for seven months, until another developer (let's call him Steve) needs to update something in that file.
+Only you don't clean it up because deadlines are looming and you have ten more things to finish before tomorrow's standup. And so that piece of code sits in your codebase for seven months, until another developer &mdash; let's call him Steve &mdash; needs to update something in that file.
 
 After reading the function for the first time, Steve will probably have several questions:
 
@@ -60,7 +60,7 @@ By parsing what's happening, Steve can deduce a partial answer to these question
 - The values in `arr` must have a property called `name` since it is mapped.
 - The function returns an array.
 
-As you can see, Steve is trying to deduce the **what** and the **why** based on the **how** because that's the only thing he has. This happens a lot, in all types of codebases, and most developers don't even think twice about it. But in the end, the time and energy you spent parsing this kind of code adds up and takes away from your time working on the code.
+As you can see, Steve is trying to deduce the **what** and the **why** based on the only thing he has: the **how**. This happens a lot, in all types of codebases, and most developers don't even think twice about it. But in the end, the time and energy you spent parsing this kind of code adds up and takes away from your time working on the code.
 
 So how can we make it easier on Steve, so he can understand what's going on at a single glance?
 
@@ -107,9 +107,9 @@ Steve will find it much easier next time he has to read our code!
 ### Why?
 Another question you could ask is a little more far-fetched and doesn't concern this function specifically, but I'll ask it anyway: **Why** is there no function called `database.getAllParticipantNames()`, to query just the names from the database (instead of all this other data we don't need)?
 
-There could be 1001 reasons for this, but for this example let's say that the database queries are cached. This means that when the query runs, the received data is stored in memory for a little while so subsequent calls don't need to make another roundtrip to the database. So using the same query here is actually an optimisation, even if we get too much data from the call.
+There could be a million different technical reasons for this, but for this example let's say that the database queries are cached. This means that when the query runs, the received data is stored in memory for a little while so subsequent calls don't need to make another roundtrip to the database. So using the same query here is actually an optimisation, even if we get too much data from the call.
 
-This optimisation is an example of something you can't possibly communicate using code alone. So to paint the whole picture, this information needs to be added in there as well.
+This optimisation is an example of something you can't possibly communicate using code alone. As it turns out, purely "self-documenting" code is simply insufficient to paint the whole picture. So we will need *some* comments after all.
 
 ```javascript
 function getParticipantNames() {
@@ -121,14 +121,14 @@ function getParticipantNames() {
 }
 ```
 
-With this, we've made the **Why** even more complete. We needed comments to fully document the code, but I still consider this "self-documenting".
+With this, we've made the **Why** even more complete. We needed comments to fully document the code, but this code can still be considered "self-documenting".
 
 ### What?
-I want to ask one last question, one asked not by Steve who has to look at this function, but rather by Tom who has to use your function in another part of the codebase: **What** is the return type of this function?
+There is one last question remaining, one asked not by Steve who has to look at your function, but rather by Tom who has to use it in another part of the codebase: **What** is the return type of this function?
 
-The best solution for that is type annotations. This will differ per language, but in Javascript there are several popular solutions. I've personally worked with [JSDoc comments](https://devhints.io/jsdoc), [Flow types](https://flow.org/) and [Typescript](https://www.typescriptlang.org/).
+The best solution for that is type annotations. Statically typed languages like Java, C# or Rust don't need any additional work since they require explicit type information to work. But dynamically typed languages like Javascript and Python don't have this luxury. Luckily, most of these dynamically typed languages have solutions for (optional) typing. Javascript even has several &mdash; I've worked with [JSDoc comments](https://devhints.io/jsdoc), [Flow types](https://flow.org/) and [Typescript](https://www.typescriptlang.org/).
 
-We've already tried the full JSDoc comment above, but all that's necessary to annotate the return type is an `@returns` statement:
+We've already tried the full JSDoc comment above, but all that's necessary to annotate the return type is an `@returns` statement in the comment:
 
 ###### JSDoc
 ```javascript
@@ -144,7 +144,7 @@ function getParticipantNames() {
 }
 ```
 
-Typescript and Flowtype have similar syntax:
+Typescript and Flowtype use syntactic notations rather than comments. Note the ` : string` after the function name:
 
 ###### Typescript / Flowtype
 ```typescript
@@ -156,15 +156,17 @@ function getParticipantNames() : string {
 	return participants.map(p => p.name);
 }
 ```
- 
-My personal favourite is Typescript. It helps with creating clean code with strict interfaces and it makes refactoring a whole lot easier when I need to. I use Typescript in nearly all of my projects, but adding it to a project is generally not a decision to take lightly &mdash; especially if you already have a developed codebase &mdash; so do consider the ramifications before you start. JSDoc is almost always the easiest choice to get started typing your code.
+
+My personal favourite is Typescript. It helps you create clean code with strict interfaces and it makes refactoring a whole lot easier when you need to. I use Typescript in nearly all of my projects.
+
+However, it's important to note that adding Typescript to a project is generally not a decision to take lightly &mdash; especially if you have an already developed codebase &mdash; so be sure to consider the ramifications before you start. JSDoc is almost always the easiest choice to get started typing your code because it's based on comment blocks, which have no impact on the code itself.
 
 ## Conclusion
-I want to extract three rules from what we've seen in this post, based on the three questions:
+Let's extract the three most important rules from what we've seen in this post, based on the three questions:
 
-- Use clear and consistent naming, types and function signatures to communicate **what** the goal of each piece of code is.
-- Use well-structured code to show **how** you're going about achieving the goal.
-- Use comments to explain **why** you're doing things a certain way, especially if that way may be non-obvious.
+- Use clear and consistent **naming, types and function signatures** to communicate **what** the goal of each piece of code is.
+- Use **well-structured code** to show **how** you're going about achieving the goal.
+- Use **comments** to explain **why** you're doing things a certain way, especially if that way may be non-obvious.
 
 That last one is the hardest for a lot of developers because the **why** is usually obvious while you're writing the code. But take a moment to think of the developers who will need to look at your code months or even years after you wrote it. They'll be grateful.
 

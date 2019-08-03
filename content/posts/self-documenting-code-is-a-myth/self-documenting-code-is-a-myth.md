@@ -15,6 +15,9 @@ tags:
 
 image: ./header.jpg
 colour: '#a14d76'
+
+commentLinks:
+- https://dev.to/woubuc/self-documenting-is-a-myth-and-how-to-make-your-code-self-documenting-3h2n#comments
 ---
 
 ## What is self-documenting code

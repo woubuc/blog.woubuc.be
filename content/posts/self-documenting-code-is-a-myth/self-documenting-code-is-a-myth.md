@@ -77,7 +77,7 @@ One solution would be to add some comments to explain what's going on.
 function get() {
 	// Load the participants from the database
 	const arr = db.getAll();
-	
+
 	// Map to get just the participant's names
 	return arr.map(i => i.name);
 }
@@ -116,10 +116,10 @@ This optimisation is an example of something you can't possibly communicate usin
 
 ```javascript
 function getParticipantNames() {
-	// Because queries are cached, using the `allParticipants` query 
+	// Because queries are cached, using the `allParticipants` query
 	// prevents another roundtrip to the database
 	const participants = database.getAllParticipants();
-	
+
 	return participants.map(p => p.name);
 }
 ```
@@ -139,10 +139,10 @@ We've already tried the full JSDoc comment above, but all that's necessary to an
 * @returns {string[]}
 */
 function getParticipantNames() {
-	// Because queries are cached, using the `allParticipants` query 
+	// Because queries are cached, using the `allParticipants` query
 	// prevents another roundtrip to the database
 	const participants = database.getAllParticipants();
-	
+
 	return participants.map(p => p.name);
 }
 ```
@@ -152,10 +152,10 @@ Typescript and Flowtype use syntactic notations rather than comments. Note the `
 ###### Typescript / Flowtype
 ```typescript
 function getParticipantNames() : string {
-	// Because queries are cached, using the `allParticipants` query 
+	// Because queries are cached, using the `allParticipants` query
 	// prevents another roundtrip to the database
 	const participants = db.getAllParticipants();
-	
+
 	return participants.map(p => p.name);
 }
 ```

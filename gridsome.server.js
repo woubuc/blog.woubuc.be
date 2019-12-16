@@ -8,5 +8,13 @@
 module.exports = function (api) {
 	api.loadSource(store => {
 		// Use the Data store API here: https://gridsome.org/docs/data-store-api
+
+		store.addSchemaTypes(`
+			type Post implements Node @infer {
+				author: ID!
+				subjects: [ID!]
+				tags: [ID!]
+			}
+		`);
 	});
 };

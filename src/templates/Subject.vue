@@ -26,7 +26,7 @@
 </template>
 
 <page-query>
-query Subject ($id: String!) {
+query Subject ($id: ID!) {
 	subject (id: $id) {
 		id
 		title
@@ -69,8 +69,12 @@ export default {
 	},
 
 	computed: {
-		displayUrl() { return new URL(this.$page.subject.homepage).hostname },
-		colour() { return Color(this.$page.subject.colour) }
+		displayUrl() {
+			return new URL(this.$page.subject.homepage).hostname;
+		},
+		colour() {
+			return Color(this.$page.subject.colour);
+		}
 	}
 }
 </script>

@@ -50,9 +50,9 @@
 </template>
 
 <page-query>
-query ($path: String!) {
-	post (path: $path) {
-		path
+query ($id: ID!) {
+	post (id: $id) {
+		id
 		title
 		author { name image(width: 100, height: 100) twitter }
 		date (format: "YYYY-MM-DD")
@@ -73,7 +73,7 @@ query ($path: String!) {
 		ogImage: image(width: 400, height: 400)
 	}
 
-	metaData {
+	metadata {
 		siteUrl
 	}
 }
@@ -136,14 +136,19 @@ export default {
 
 	computed: {
 		created() { return new Date(this.$page.post.date) },
-		postUrl() { return this.$page.metaData.siteUrl + this.$page.post.path + '/' },
+		postUrl() { return this.$page.metadata.siteUrl + this.$page.post.path + '/' },
 
-		cover() { return `url(${ this.$page.post.cover.src })` },
-		colour() { return Color(this.$page.post.colour) },
+		cover() {
+			if (!this.$page.post.cover) return '';
+			return `url(${ this.$page.post.cover.src })`;
+		},
+		colour() {
+			return Color(this.$page.post.colour || 'black');
+		},
 
 		ogImage() {
 			if (!this.$page.post.ogImage) return '';
-			return this.$page.metaData.siteUrl + this.$page.post.ogImage.src;
+			return this.$page.metadata.siteUrl + this.$page.post.ogImage.src;
 		},
 
 		content() {

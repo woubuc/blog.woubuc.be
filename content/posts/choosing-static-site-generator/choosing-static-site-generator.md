@@ -29,7 +29,7 @@ commentLinks:
 ---
 
 I'm new to static site generators. I've heard about them, and I know they've gained in popularity in the past couple of years, but until now when I made a static site it was just a folder of HTML files. But now I decided to do it *properly*, since I was going to build a whole new blog. So I started searching.
- 
+
 After a few Google searches, I found a website called [StaticGen.com](https://www.staticgen.com/) which lists a lot of static site generators (I didn't even know there were that many!). The site also provides filters to search for exactly the type of SSG you want. Of course, since I was new at all this, I had no idea what I needed from a static site generator, so I started with the top entries on the list.
 
 *I'm going to list good and bad things about each of the tools I tried. These are just my initial experiences based on working with them for a short time. Your mileage may vary.*
@@ -38,12 +38,12 @@ After a few Google searches, I found a website called [StaticGen.com](https://ww
 
 ## Jekyll
 The 'classic' static site generator, [Jekyll](https://jekyllrb.com/) has been around for ages, it's stable and boring. A great choice for a writer or someone who just needs their site online. A little less *fun* for someone who wants to use their site as a personal playground for experimenting (like me).
- 
+
 #### I liked
 - Stable, battle-tested and production-ready
 - Can deploy directly to Github pages
 - Big community, lots of info to be found and most problems have been solved before
- 
+
 #### I didn't like
 - Liquid templates have limited logic (also I'm not a fan of the `{% %}` syntax)
 - It requires Ruby, GCC and Make, which are a bit of a headache to set up

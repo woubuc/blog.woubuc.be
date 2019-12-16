@@ -26,7 +26,7 @@ files:
 - name: music-manager.zip
   size: 2.28MB
   path: ./music-manager.zip
-  
+
 commentLinks:
 - https://www.reddit.com/r/godot/comments/citw6g/making_a_background_music_player_in_godot/
 - https://dev.to/woubuc/a-background-music-player-in-godot-h6e#comments
@@ -87,7 +87,7 @@ Now make another scene and call it `Scene2`. Add **1 label and 2 buttons**.
 
 ![Screenshot of scene 2, containing a label saying 'This is scene 2', a button labeled 'Go to scene 1', and a second button labeled 'Play track 2'.](./screen-scene2.png)
 
-Next, add a script to the root node of the scene and connect the `pressed()` events of both buttons to it. 
+Next, add a script to the root node of the scene and connect the `pressed()` events of both buttons to it.
 
 ###### Scene2.gd
 ```gdscript
@@ -158,7 +158,7 @@ stop()
 
 #### Load
 Next, we need to load the new track. GDScript makes this very easy with the `load()` function.
- 
+
 ```gdscript
 var new_track = load(track_url)
 ```

@@ -29,7 +29,6 @@ module.exports = {
 			options: {
 				typeName: 'Subject',
 				path: 'content/subjects/**/*.md',
-				route: '/subject/:id',
 			},
 		},
 		{ // Authors
@@ -37,7 +36,6 @@ module.exports = {
 			options: {
 				typeName: 'Author',
 				path: 'content/authors/**/*.md',
-				route: '/author/:id',
 			},
 		},
 		{ // Posts
@@ -45,7 +43,6 @@ module.exports = {
 			options: {
 				typeName: 'Post',
 				path: 'content/posts/**/*.md',
-				route: '/post/:id',
 				refs: {
 					tags: {
 						typeName: 'Tag',
@@ -87,6 +84,13 @@ module.exports = {
 			},
 		}
 	],
+
+	templates: {
+		Post: '/post/:id',
+		Tag: '/tag/:title',
+		Subject: '/subject/:id',
+		Author: '/author/:id',
+	},
 
 	transformers: {
 		//Add markdown support to all file-system sources

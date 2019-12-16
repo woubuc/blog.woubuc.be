@@ -18,6 +18,9 @@ tags:
 
 image: ./header.jpg
 colour: '#a98779'
+
+commentLinks:
+- https://dev.to/woubuc/publishing-a-rust-binary-on-npm-1lgf
 ---
 
 I recently wrote a CLI tool in Rust, called [Project Cleanup](https://github.com/woubuc/project-cleanup). I published it on crates.io, the Rust package manager, so people can install it with `cargo install project-cleanup`. Great! It's published! But this is a program that everyone could use, not just Rust developers, so I wanted to provide a way for non-Rust developers to install it.

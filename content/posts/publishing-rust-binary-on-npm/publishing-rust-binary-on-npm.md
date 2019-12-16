@@ -223,7 +223,7 @@ Once installed, we want the user to be able to run `my-program` from anywhere. L
 }
 ```
 
-We also need to let the system know that this is an executable script, and to run it with `node`. We do this with something called a [shebang](https://en.wikipedia.org/wiki/Shebang_\(Unix\)).
+We also need to let the system know that this is an executable script, and to run it with `node`. We do this by adding a [shebang](https://en.wikipedia.org/wiki/Shebang_\(Unix\)) to the top of the file.
 
 ###### npm/run.js
 ```javascript

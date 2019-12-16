@@ -5,8 +5,8 @@ author: woubuc
 description: >
   Instead of asking your users to install the entire Rust toolchain just to compile your program with cargo, it may be easier to let them install it through npm. Here's how to set it up.
 
-published: false
-
+published: true
+date: 2019-12-17
 
 subjects:
 - rust

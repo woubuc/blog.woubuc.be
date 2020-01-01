@@ -147,11 +147,11 @@ function getParticipantNames() {
 }
 ```
 
-Typescript and Flowtype use syntactic notations rather than comments. Note the ` : string` after the function name:
+Typescript and Flowtype use syntactic notations rather than comments. Note the ` : string[]` after the function name:
 
 ###### Typescript / Flowtype
 ```typescript
-function getParticipantNames() : string {
+function getParticipantNames() : string[] {
 	// Because queries are cached, using the `allParticipants` query
 	// prevents another roundtrip to the database
 	const participants = db.getAllParticipants();
